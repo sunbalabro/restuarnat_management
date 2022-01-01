@@ -1,0 +1,125 @@
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 500px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.signup .inp {
+    width: 300px;
+}
+
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.signup {
+    background-image: url('../../Assets/form1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 725px;
+}
+
+.signup .sbn {
+    width: 500px;
+    height: 500px;
+    padding: 30px;
+    background-color: rgba(215, 203, 219, 0.4);
+}
+
+.sbn {
+    padding-left: 1em;
+    width: 100%;
+    z-index: 2;
+}
+
+.sbn>.sbn-inner {
+    display: inline-block;
+}
+
+@keyframes text-clip {
+    from {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes outer-left {
+    from {
+        transform: translateX(20%);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+@keyframes inner-left {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+@keyframes inp-right {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+/* .grt,
+.sbo {
+    animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+} */
+
+
+.sbn-inner {
+    display: inline-block;
+    animation: inner-left 1s 1s ease both;
+}
+
+.grt-inner {
+    display: inline-block;
+    animation: inner-left 1s 1s ease both,
+        text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.sbo-inner {
+    font-size: 24px;
+    animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+/* .sbn {
+    animation: outer-left 1s 1s ease both;
+} */
+
+.grt>.grt-inner {
+    display: inline-block;
+}
+
+.sbo {
+    display: inline-block;
+}
+
+.signup>form {
+    animation: outer-left 1s 1s ease both;
+}

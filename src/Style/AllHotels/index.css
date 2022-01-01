@@ -1,0 +1,25 @@
+.allHotels table{
+    width: 800px;
+    /* border: 1px solid black; */
+    margin: 0 auto;
+}
+.allHotels td , th{
+    padding: 7px;
+}
+.allHotels{
+    margin: 0 auto;
+    box-shadow: 3px 3px 3px 4px #888888;
+    margin-top: 20px;
+    background-color: #f3f2f2;
+    /* width: 900px; */
+    height: 800px;
+    border: none;
+    border-radius: 20px;
+}
+.allHotels h1{
+    color: #D2F0FF;
+    background-color: #1E73BE;
+    border-start-start-radius: 20px;
+    border-start-end-radius: 20px;
+    font-size: 30px;
+}

@@ -1,0 +1,14 @@
+.rmdt{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border: 1px solid #ebebeb;
+    box-shadow: 2px 3px 4px solid #ebebeb;
+    width: 500px;
+}
+.rt{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

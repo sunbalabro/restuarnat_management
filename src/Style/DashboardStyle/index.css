@@ -1,0 +1,32 @@
+.dscr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.dash{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.Dashboard .head{
+    width: 100%;
+    color: #D2F0FF;
+    background-color: #1E73BE;
+    border-start-start-radius: 20px;
+    border-start-end-radius: 20px;
+    font-size: 30px;
+}
+.Dashboard{
+    margin: 0 auto;
+    box-shadow: 3px 3px 3px 4px #888888;
+    margin-top: 20px;
+    background-color: #f7f7f7;
+    width: 900px;
+    height: 800px;
+    border: none;
+    border-radius: 20px;
+}
