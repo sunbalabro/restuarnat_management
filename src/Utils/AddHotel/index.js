@@ -6,7 +6,7 @@ import { Modal ,Form, Input, Button, Checkbox} from 'antd';
 export default function AddHotel({isModalVisible,handleCancel,setIsModalVisible}) {
 
   var storageRef = firebase.storage().ref();
-  const [imageurl,setImageUrl] = useState()
+  const [imageUrl,setImageUrl] = useState()
   const [file,setFile] = useState()
   
   const onFinish = (values,file) => {
@@ -42,7 +42,7 @@ export default function AddHotel({isModalVisible,handleCancel,setIsModalVisible}
         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
           console.log('File available at', downloadURL);
           const iurl = downloadURL
-          setImageUrl(iurl)
+          setImageUrl(downloadURL)
         });
       }
     );
@@ -56,7 +56,7 @@ export default function AddHotel({isModalVisible,handleCancel,setIsModalVisible}
       phoneNumber: values.phoneNumber,
       rating: values.rating,
       website: values.website,
-      image: imageurl
+      image: imageUrl
     }).then(()=> console.log("data has been successfully sents "))
     .catch(err=>{
       console.log(err)
