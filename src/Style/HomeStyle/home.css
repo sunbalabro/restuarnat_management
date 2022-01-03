@@ -5,3 +5,52 @@
     align-items: center;
     justify-content: center;
 }
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.nav li{
+    font-size: 20px;
+    font-weight: bold;
+}
+.homeBlog{
+    margin-top: 180px;
+    display: flex;
+    margin-bottom: 200px;
+}
+.navBackground{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1;
+    background-color: thistle;
+    border: 1px solid thistle;
+}
+.navBackground li{
+    font-size: 20px;
+    font-weight: bold;
+}
+.homeBlog .hmbh{
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 500px;
+}
+.homeBlog .hmbh h1{
+    font-size: 50px;
+}
+.homeBlog .hmbh h3{
+    font-size: 20px;
+    font-weight: lighter;
+}
+.fh .al{
+    font-size: 60px;
+}
+.fh{
+    padding: 40px;
+    background-color: #F8F9FA;
+}
