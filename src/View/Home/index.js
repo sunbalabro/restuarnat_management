@@ -9,7 +9,7 @@ import HomeBan from '../../Utils/HomeBan';
 import HomeBlog from '../../Utils/HomeBlog';
 import AppFooter from '../../Utils/Footer';
 const { Meta } = Card;
-export default function Home() {
+export default function Home({user}) {
     const navigate = useNavigate()
     const [hotelsData, setHotelsData] = useState([])
     const [navBackground,setNavBackground] = useState()
@@ -29,7 +29,6 @@ export default function Home() {
         getHotelsfromDatabase()
     }, [])
     const changeBackground = () => {
-        console.log(window.scrollY)
         if (window.scrollY >= 66) {
           setNavBackground(true)
         } else {
@@ -38,15 +37,20 @@ export default function Home() {
       }
     useEffect(() => {
         changeBackground()
-        // adding the event when scroll change background
         window.addEventListener("scroll", changeBackground)
       })
    const handleClick = (docId) =>{
-       navigate(`/hotel/${docId}/hoteldetail`)
+        const curUser = firebase.auth().currentUser
+        if(curUser !== null){
+            navigate(`/hotel/${docId}/hoteldetail`)
+        }else{
+          alert("Login please")
+      }
    }
+   console.log(user)
     return (
         <>
-        <Navbar navBackground={navBackground} setNavBackground={setNavBackground} />
+        <Navbar navBackground={navBackground} setNavBackground={setNavBackground} user={user} />
             <HomeBan />
             <HomeBlog />
             <div className='fh'>

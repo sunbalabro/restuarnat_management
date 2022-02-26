@@ -3,6 +3,8 @@ import firebase from "../../Config/Firebase/index"
 import { Form, Input, Button} from 'antd';
 import {useNavigate,Link} from "react-router-dom"
 import "../../Style/LogInStyle/login.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDharmachakra } from '@fortawesome/free-solid-svg-icons'
 export default function LogIn() {
     const navigate = useNavigate()
     const [form] = Form.useForm();
@@ -15,7 +17,7 @@ export default function LogIn() {
           if(values.emailaddress === "admin@gmail.com" && values.password === "admin786"){
               navigate('/adminpanel')
           }else{
-              navigate('/home')
+              navigate('/')
           }
       }).catch((err)=>{
           console.log(err)
@@ -27,17 +29,7 @@ export default function LogIn() {
     };
     return (
         <div className="login">
-            <div className="sbn">
-                    <div className="sbn-inner">
-                        <div className="grt">
-                            <h1 className="grt-inner">Welcome to Our Restaurant </h1>
-                        </div>
-                        <div className="sbo">
-                            <h4 className="sbo-inner">Here you will get more special than you ever think in very efficient amount !</h4>
-                        </div>
-                    </div>
 
-                </div>
              <Form
     form={form}
     name="basic"
@@ -54,10 +46,9 @@ export default function LogIn() {
     onFinishFailed={onFinishFailed}
     autoComplete="off"
     >
-     
+      <FontAwesomeIcon icon={faDharmachakra} style={{fontSize:'90px'}} /> 
         <h1>Log In</h1>
       <Form.Item
-        label="Email Address"
         name="emailaddress"
         rules={[
           {
@@ -66,12 +57,12 @@ export default function LogIn() {
           },
         ]}
       >
-        <Input />
+        <Input placeholder='Enter you email' className='inp' />
       </Form.Item>
 
       <Form.Item
-        label="Password"
         name="password"
+        defaultValue="Password"
         rules={[
           {
             required: true,
@@ -79,7 +70,7 @@ export default function LogIn() {
           },
         ]}
       >
-        <Input.Password />
+        <Input.Password placeholder='Enter your password' className='inp' />
       </Form.Item>
 
      
@@ -94,14 +85,9 @@ export default function LogIn() {
           Submit
         </Button>
       </Form.Item>
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <h2>If you haven't any account <Link to="/">signup</Link> </h2>
-      </Form.Item>
+      
+        <h3>If you haven't any account <Link to="/register">signup</Link> </h3>
+     
     </Form>
         </div>
     )

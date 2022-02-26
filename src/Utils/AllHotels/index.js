@@ -61,7 +61,7 @@ export default function AllHotels() {
       Object.keys(data).map((key) => { newData.push({ ...data[key], docId: key }) })
       setHotelsData(newData)
       console.log(hotelsData)
-    }).then(()=> console.log("successfully get data")).catch( err => console.log(err))
+    })
   }, [])
 
   const [form] = Form.useForm();

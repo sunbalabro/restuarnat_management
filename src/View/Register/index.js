@@ -2,6 +2,8 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import firebase from "../../Config/Firebase/index"
 import { useNavigate , Link} from 'react-router-dom';
 import "../../Style/SignupStyle/signup.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDharmachakra } from '@fortawesome/free-solid-svg-icons'
 const Register = () => {
     const navigate = useNavigate()
     const [form] = Form.useForm();
@@ -27,17 +29,6 @@ const Register = () => {
 
   return (
   <div className="signup">
-      <div className="sbn">
-                    <div className="sbn-inner">
-                        <div className="grt">
-                            <h1 className="grt-inner">Welcome to Our Restaurant </h1>
-                        </div>
-                        <div className="sbo">
-                            <h4 className="sbo-inner">Here you will get more special than you ever think in very efficient amount !</h4>
-                        </div>
-                    </div>
-
-                </div>
     <Form
     form={form}
     name="basic"
@@ -53,12 +44,12 @@ const Register = () => {
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
     autoComplete="off"
+
     >
+            <FontAwesomeIcon icon={faDharmachakra} style={{fontSize:'90px'}} /> 
         <h1>Sign Up</h1>
       <Form.Item
-        label="Username"
         name="username"
-        className='inp'
         rules={[
           {
             required: true,
@@ -66,12 +57,11 @@ const Register = () => {
           },
         ]}
       >
-        <Input />
+        <Input
+        className='inp' placeholder='Enter your username' />
       </Form.Item>
       <Form.Item
-        label="Email Address"
         name="emailaddress"
-        className='inp'
         rules={[
           {
             required: true,
@@ -79,13 +69,12 @@ const Register = () => {
           },
         ]}
       >
-        <Input />
+        <Input
+        className='inp' placeHolder="Enter your email" />
       </Form.Item>
 
       <Form.Item
-        label="Password"
         name="password"
-        className='inp'
         rules={[
           {
             required: true,
@@ -93,7 +82,8 @@ const Register = () => {
           },
         ]}
       >
-        <Input.Password />
+        <Input.Password
+        className='inp' placeHolder="Enter your password" />
       </Form.Item>
 
      
@@ -108,14 +98,9 @@ const Register = () => {
           Submit
         </Button>
       </Form.Item>
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <h2>If you already have an account <Link to="/login">login</Link> </h2>
-      </Form.Item>
+      
+        <h3>If you already have an account <Link to="/login">login</Link> </h3>
+     
     </Form>
     </div>
   );

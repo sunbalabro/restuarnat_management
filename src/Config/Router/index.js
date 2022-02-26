@@ -7,15 +7,15 @@ import Home from "../../View/Home"
 import OrderRoom from "../../View/OrderRoom"
 import Navbar from "../../Utils/Navbar/index"
 import HotelDetails from "../../View/HotelDetails"
-export default function AppRouter(){
+export default function AppRouter({user}){
     return(
         <Router>
             
             <Routes>
-                <Route path="/" element={<Register />} />
+                <Route path="/"  element={<Home user={user} />} />
+                <Route path="/register" element={<Register />} />
                 <Route path="/adminpanel" element={<AdminPanel />} />
                 <Route path="/login" element={<LogIn />} />
-                <Route path="/home" element={<Home />} />
                 <Route path="/order" element={<OrderRoom />} />
                 <Route path="/hotel/:id/hoteldetail" element={<HotelDetails />} />
             </Routes>

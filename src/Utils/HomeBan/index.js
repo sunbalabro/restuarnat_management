@@ -6,7 +6,6 @@ export default function HomeBan(){
         <div className="homeBan">
         <h1>Welcome To Solo</h1>
         <h2>We hope you'll enjoy your stay.</h2>
-
         </div>
     )
 }

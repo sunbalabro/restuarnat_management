@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 import {useLocation,useNavigate} from "react-router-dom"
 import firebase from "../../Config/Firebase/index"
+import Navbar from "../../Utils/Navbar/index"
+import HomeBan from '../../Utils/HomeBan';
+import "../../Style/OrderStyle/index.css"
 export default function  OrderRoom() {
     const navigate = useNavigate()
+    const [navBackground,setNavBackground] = useState()
+
     const [form] = Form.useForm();
     const location = useLocation()
     console.log(location.state)
@@ -22,14 +27,28 @@ export default function  OrderRoom() {
         form.resetFields()
        navigate('/home')
     };
+    const changeBackground = () => {
+        if (window.scrollY >= 66) {
+          setNavBackground(true)
+        } else {
+          setNavBackground(false)
+        }
+      }
+    useEffect(() => {
+        changeBackground()
+        window.addEventListener("scroll", changeBackground)
+      })
     
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
         
       };
     return (
-        <div>
-             <Form
+    <div style={{backgroundColor:'#F8F8F8'}}>
+          <Navbar navBackground={navBackground} setNavBackground={setNavBackground} />
+          <HomeBan /> 
+          <h1 style={{marginTop:'200px'}}>Order Details</h1>
+             <Form className='order'
              form={form}
       name="basic"
       labelCol={{
